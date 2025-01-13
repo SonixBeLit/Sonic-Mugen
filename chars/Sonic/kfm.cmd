@@ -490,7 +490,7 @@ value = 200 ; State for 5A Light Attack
 triggerall = command = "x"
 triggerall = command != "holddown"
 triggerall = statetype != A
-triggerall = stateno != 52
+triggerall = stateno != 52 && !map(L)
 trigger1 = ctrl
 trigger2 = (stateno = 210) && movecontact
 trigger3 = (stateno = 230) && movecontact ; Heavy attack

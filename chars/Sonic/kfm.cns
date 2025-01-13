@@ -255,11 +255,27 @@ ctrl = 1
 
 [Statedef -2]
 
+[State 0, DisplayToClipboard]
+type = DisplayToClipboard
+trigger1 = 1
+text = "LRebeat = %f"
+params = map(L)
+ignorehitpause = 1
+
 [State Limiter]
-type = mapadd
-trigger1 = stateno = 200
-trigger2 = movecontact = 1 
+type = mapset
+trigger1 = ctrl = 1
 map = "L"
+value = 0
+[State Limiter]
+type = mapset
+trigger1 = ctrl = 1
+map = "M"
+value = 0
+[State Limiter]
+type = mapset
+trigger1 = ctrl = 1
+map = "H"
 value = 0
 
 [State Limiter]
