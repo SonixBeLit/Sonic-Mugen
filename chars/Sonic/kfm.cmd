@@ -385,36 +385,6 @@ time = 1
 [Statedef -1]
 
 ;===========================================================================
-;---------------------------------------------------------------------------
-;Smash Kung Fu Upper (uses one super bar)
-[State -1, Smash Kung Fu Upper]
-type = ChangeState
-value = 3050
-triggerall = command = "SmashKFUpper"
-triggerall = power >= 1000
-triggerall = statetype != A
-trigger1 = ctrl
-trigger2 = hitdefattr = SC, NA, SA, HA
-trigger2 = stateno != [3050,3100)
-trigger2 = movecontact
-trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-
-;---------------------------------------------------------------------------
-;Triple Kung Fu Palm (uses one super bar)
-[State -1, Triple Kung Fu Palm]
-type = ChangeState
-value = 3000
-triggerall = command = "TripleKFPalm"
-triggerall = power >= 1000
-trigger1 = statetype != A
-trigger1 = ctrl
-trigger2 = statetype != A
-trigger2 = hitdefattr = SC, NA, SA, HA
-trigger2 = stateno != [3000,3050)
-trigger2 = movecontact
-trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
-
-
 ;===========================================================================
 ;This is not a move, but it sets up var(1) to be 1 if conditions are right
 ;for a combo into a special move (used below).
@@ -436,40 +406,6 @@ trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
 var(1) = 1
 
 ;---------------------------------------------------------------------------
-;Fast Kung Fu Knee (1/3 super bar)
-[State -1, Fast Kung Fu Knee]
-type = ChangeState
-value = 1070
-triggerall = command = "FF_ab"
-triggerall = power >= 330
-trigger1 = var(1) ;Use combo condition (above)
-
-;---------------------------------------------------------------------------
-;Light Kung Fu Knee
-[State -1, Light Kung Fu Knee]
-type = ChangeState
-value = 1050
-triggerall = command = "FF_a"
-trigger1 = var(1) ;Use combo condition (above)
-
-;---------------------------------------------------------------------------
-;Strong Kung Fu Knee
-[State -1, Strong Kung Fu Knee]
-type = ChangeState
-value = 1060
-triggerall = command = "FF_b"
-trigger1 = var(1) ;Use combo condition (above)
-
-;---------------------------------------------------------------------------
-;Fast Kung Fu Palm (1/3 super bar)
-[State -1, Fast Kung Fu Palm]
-type = ChangeState
-value = 1020
-triggerall = command = "QCF_xy"
-triggerall = power >= 330
-trigger1 = var(1) ;Use combo condition (above)
-
-;---------------------------------------------------------------------------
 ;Rapid Kicks
 [State -1, Rapid Kicks]
 type = ChangeState
@@ -488,118 +424,6 @@ trigger4 = ctrl
 trigger1 = var(1) ;Use combo condition (above)
 trigger2=stateno=[600,610]&&movecontact
 trigger3=stateno=630&&movecontact
-;---------------------------------------------------------------------------
-;Fast Kung Fu Upper (1/3 super bar)
-[State -1, Fast Kung Fu Upper]
-type = ChangeState
-value = 1120
-triggerall = command = "upper_xy"
-triggerall = power >= 330
-trigger1 = var(1) ;Use combo condition (above)
-
-;---------------------------------------------------------------------------
-;Light Kung Fu Upper
-[State -1, Light Kung Fu Upper]
-type = ChangeState
-value = 1100
-triggerall = command = "upper_x"
-trigger1 = var(1) ;Use combo condition (above)
-
-;---------------------------------------------------------------------------
-;Strong Kung Fu Upper
-[State -1, Strong Kung Fu Upper]
-type = ChangeState
-value = 1110
-triggerall = command = "upper_y"
-trigger1 = var(1) ;Use combo condition (above)
-
-;---------------------------------------------------------------------------
-;Fast Kung Fu Blow (1/3 super bar)
-[State -1, Fast Kung Fu Blow]
-type = ChangeState
-value = 1220
-triggerall = command = "QCB_xy"
-triggerall = power >= 330
-trigger1 = var(1) ;Use combo condition (above)
-
-;---------------------------------------------------------------------------
-;Light Kung Fu Blow
-[State -1, Light Kung Fu Blow]
-type = ChangeState
-value = 1200
-triggerall = command = "QCB_x"
-trigger1 = var(1) ;Use combo condition (above)
-
-;---------------------------------------------------------------------------
-;Strong Kung Fu Blow
-[State -1, Strong Kung Fu Blow]
-type = ChangeState
-value = 1210
-triggerall = command = "QCB_y"
-trigger1 = var(1) ;Use combo condition (above)
-
-;---------------------------------------------------------------------------
-;High Kung Fu Blocking (High)
-[State -1, High Kung Fu Blocking High]
-type = ChangeState
-value = 1300
-triggerall = command = "blocking"
-triggerall = command != "holddown"
-trigger1 = ctrl
-trigger1 = statetype != A
-trigger2 = stateno = 1310 || stateno = 1330
-trigger2 = time > 0
-
-;---------------------------------------------------------------------------
-;High Kung Fu Blocking (Low)
-[State -1, High Kung Fu Blocking Low]
-type = ChangeState
-value = 1320
-triggerall = command = "blocking"
-triggerall = command = "holddown"
-trigger1 = ctrl
-trigger1 = statetype != A
-trigger2 = stateno = 1310 || stateno = 1330
-trigger2 = time > 0
-
-;---------------------------------------------------------------------------
-;High Kung Fu Blocking (Air)
-[State -1, High Kung Fu Blocking Low]
-type = ChangeState
-value = 1340
-triggerall = command = "blocking"
-triggerall = command != "holdup"
-triggerall = command != "holddown"
-trigger1 = ctrl
-trigger1 = statetype = A
-trigger2 = stateno = 1350
-trigger2 = time > 0
-
-;---------------------------------------------------------------------------
-;Far Kung Fu Zankou
-[State -1, Far Kung Fu Zankou]
-type = ChangeState
-value = 1420
-triggerall = command = "QCF_ab"
-triggerall = power >= 330
-trigger1 = var(1) ;Use combo condition (above)
-
-;---------------------------------------------------------------------------
-;Light Kung Fu Zankou
-[State -1, Light Kung Fu Zankou]
-type = ChangeState
-value = 1400
-triggerall = command = "QCF_a"
-trigger1 = var(1) ;Use combo condition (above)
-
-;---------------------------------------------------------------------------
-;Strong Kung Fu Zankou
-[State -1, Strong Kung Fu Zankou]
-type = ChangeState
-value = 1410
-triggerall = command = "QCF_b"
-trigger1 = var(1) ;Use combo condition (above)
-
 ;===========================================================================
 ;---------------------------------------------------------------------------
 ;Run Fwd
