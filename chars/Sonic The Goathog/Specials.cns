@@ -1,0 +1,215 @@
+;Rapid Kicks
+[Statedef 1000]
+type    = S
+movetype= A
+physics = S
+juggle  = 4
+poweradd= 55
+velset = 0,0
+anim = 1000
+ctrl = 0
+sprpriority = 2
+
+[State 1000, 1]
+type = PlaySnd
+trigger1 = Time = 8
+value = 0, 0
+
+[State 1000, 2]
+type = PosAdd
+trigger1 = AnimElem = 2
+x = 30
+
+[State 1000, 3]
+type = PosAdd
+trigger1 = AnimElem = 3
+trigger2 = AnimElem = 13
+x = 10
+
+[State 1000, 4]
+type = PosAdd
+trigger1 = AnimElem = 5
+x = 10
+
+[State 1000, 5]
+type = HitDef
+trigger1 = Time = 0
+attr = C, NA
+damage    = 23
+priority  = 3
+animtype  = Light
+hitflag = MAF
+guardflag = L
+pausetime = 5,5
+sparkno = 0
+sparkxy = -10,-42
+hitsound   = 5,0
+guardsound = 6,0
+ground.type = Low
+ground.slidetime = 4
+ground.hittime  = 9
+ground.velocity = -4
+air.velocity = -1.5,-3
+
+[State 1000, 6]
+type = HitDef
+trigger1 = Time = 12
+attr = C, NA
+damage    = 23
+priority  = 3
+animtype  = Light
+hitflag = MAF
+guardflag = L
+pausetime = 5,5
+sparkno = 0
+sparkxy = -10,-42
+hitsound   = 5,0
+guardsound = 6,0
+ground.type = Low
+ground.slidetime = 4
+ground.hittime  = 9
+ground.velocity = -4
+air.velocity = -1.5,-3
+
+[State 1000, 7]
+type = HitDef
+trigger1 = Time = 17
+attr = C, NA
+damage    = 23
+priority  = 3
+animtype  = Light
+hitflag = MAF
+guardflag = L
+pausetime = 5,8
+sparkno = 0
+sparkxy = -10,-42
+hitsound   = 5,0
+guardsound = 6,0
+ground.type = Low
+ground.slidetime = 4
+ground.hittime  = 9
+ground.velocity = -4
+air.velocity = -1.5,-3
+
+[State 1000, 8]
+type = PosAdd
+trigger1 = AnimElem = 9
+x = -5
+
+[State 1000, 9]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; Dive Kick
+[Statedef 1010]
+type    = A
+movetype= A
+physics = N
+juggle  = 4
+poweradd= 100
+velset = 0,0
+anim = 1010
+ctrl = 0
+sprpriority = 2
+
+[State 1010, 1]
+type = PlaySnd
+trigger1 = Time = 8
+value = 0, 0
+
+
+[State 1010, 3]
+type = HitDef
+trigger1 = Time = 10
+attr = C, NA
+damage    = 23
+priority  = 3
+animtype  = Hard
+hitflag = MAF
+guardflag = HA
+pausetime = 7,7
+sparkno = 0
+sparkxy = -10,-42
+hitsound   = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 4
+ground.hittime  = 9
+ground.velocity = -4
+air.velocity = -1.5,5
+down.bounce = 1
+
+[State 1010, 4]
+type = HitDef
+trigger1 = Time = 13
+attr = C, NA
+damage    = 23
+priority  = 3
+animtype  = Hard
+hitflag = MAF
+guardflag = L
+pausetime = 7,7
+sparkno = 0
+sparkxy = -10,-42
+hitsound   = 5,0
+guardsound = 6,0
+ground.type = trip
+ground.slidetime = 4
+ground.hittime  = 9
+ground.velocity = -4
+air.velocity = -1.5,5
+down.bounce = 1
+
+[State 0, Gravity]
+type = Gravity
+trigger1 = 1
+;ignorehitpause = 
+;persistent = 
+
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = animelem = 1
+x = 2
+y = -6
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = animelem = 6
+x = 7
+y = 11
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 =pos y>=0
+value = 1011
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; Dive Kick Landing
+[Statedef 1011]
+type    = S
+movetype= A
+physics = S
+juggle  = 4
+poweradd= 100
+velset = 0,0
+anim = 1011
+ctrl = 0
+sprpriority = 2
+
+
+[State 1011, 1]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+y = 0
+;ignorehitpause = 
+;persistent = 

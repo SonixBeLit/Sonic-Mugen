@@ -1,0 +1,53 @@
+[State - 5L Limit]
+type = mapadd
+trigger1 = time = 0
+map = "5L"
+value = 1
+
+[State - 5B Limit]
+type = mapadd
+trigger1 = time = 0
+map = "5B"
+value = 1
+
+[State - 5C Limit]
+type = mapadd
+trigger1 = time = 0
+map = "5C"
+value = 1
+
+[State - 2L Limit]
+type = mapadd
+trigger1 = time = 0
+map = "2L"
+value = 1
+
+[State - 2B Limit]
+type = mapadd
+trigger1 = time = 0
+map = "2B"
+value = 1
+
+[State - 2C Limit]
+type = mapadd
+trigger1 = time = 0
+map = "2C"
+value = 1
+
+[State - 3C Limit]
+type = mapadd
+trigger1 = time = 0
+map = "3C"
+value = 1
+
+[State - 5L Limit]
+type = mapadd
+trigger1 = time = 0
+map = "5L"
+value = 1
+
+[State - 5L Limit]
+type = mapadd
+trigger1 = time = 0
+map = "5L"
+value = 1
