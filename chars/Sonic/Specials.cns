@@ -100,6 +100,110 @@ type = ChangeState
 trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
+;---------------------------------------------------------------------------
+;Up Kicks Startup
+[Statedef 1001]
+type    = S
+movetype= A
+physics = S
+poweradd= 55
+velset = 0,0
+anim = 1001
+ctrl = 0
+sprpriority = 2
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = animtime = 0
+value = 1002
+;---------------------------------------------------------------------------
+;Up Kicks Hits
+[Statedef 1002]
+type    = A
+movetype= A
+physics = A
+poweradd= 55
+velset = 4,-4
+anim = 1002
+ctrl = 0
+sprpriority = 2
+juggle = 0
+
+[State 1002, 1]
+type = PlaySnd
+trigger1 = Time = 8
+value = 0, 0
+
+[State 1002, 2]
+type = HitDef
+trigger1 = Time = 0
+attr = C, NA
+damage    = 23
+priority  = 3
+animtype  = Light
+hitflag = MAF
+guardflag = L
+pausetime = 5,8
+sparkno = 0
+sparkxy = -10,-42
+hitsound   = 5,0
+guardsound = 6,0
+ground.type = Low
+ground.slidetime = 4
+ground.hittime  = 9
+ground.velocity = -1, -6
+air.velocity = -2,-6
+down.velocity = -5,0
+fall = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = movecontact && command = "QCF_y"
+value = 1003
+ctrl = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = animtime = 0
+value = 41
+
+;Up Kicks Pt.2
+[Statedef 1003]
+type    = A
+movetype= A
+physics = A
+poweradd= 55
+velset = 4,-4
+anim = 1003
+ctrl = 0
+sprpriority = 2
+juggle = 0
+
+[State 1003, 1]
+type = PlaySnd
+trigger1 = Time = 8
+value = 0, 0
+
+[State 1003, 2]
+type = HitDef
+trigger1 = Time = 0
+attr = C, NA
+damage    = 23
+priority  = 3
+animtype  = Light
+hitflag = MAF
+guardflag = L
+pausetime = 5,8
+sparkno = 0
+sparkxy = -10,-42
+hitsound   = 5,0
+guardsound = 6,0
+ground.type = Low
+ground.slidetime = 4
+ground.hittime  = 9
+ground.velocity = -4, -6
+air.velocity = -1.5,-6
+
 
 ;---------------------------------------------------------------------------
 ; Dive Kick

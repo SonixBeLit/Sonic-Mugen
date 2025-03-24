@@ -267,11 +267,13 @@ type = mapset
 trigger1 = ctrl = 1
 map = "L"
 value = 0
+
 [State Limiter]
 type = mapset
 trigger1 = ctrl = 1
 map = "M"
 value = 0
+
 [State Limiter]
 type = mapset
 trigger1 = ctrl = 1
@@ -280,51 +282,53 @@ value = 0
 
 [State Limiter]
 type = mapset
-trigger1 = stateno = 210
-map = "M"
-value = 1
-
-[State Limiter]
-type = mapset
-trigger1 = stateno = 230
-map = "H"
-value = 1
-
-[State Limiter]
-type = mapset
-trigger1 = stateno = 400
+trigger1 = ctrl = 1
 map = "DL"
-value = 1
+value = 0
 
 [State Limiter]
 type = mapset
-trigger1 = stateno = 410
+trigger1 = ctrl = 1
 map = "DM"
-value = 1
+value = 0
 
 [State Limiter]
 type = mapset
-trigger1 = stateno = 430
+trigger1 = ctrl = 1
 map = "DH"
-value = 1
+value = 0
 
 [State Limiter]
 type = mapset
-trigger1 = stateno = 600
-map = "j.5A"
-value = 1
+trigger1 = ctrl = 1
+map = "DFH"
+value = 0
 
 [State Limiter]
 type = mapset
-trigger1 = stateno = 610
-map = "j.5B"
-value = 1
+trigger1 = ctrl = 1
+map = "j.5L"
+value = 0
 
 [State Limiter]
 type = mapset
-trigger1 = stateno = 630
-map = "j.5C"
-value = 1
+trigger1 = ctrl = 1
+map = "j.5M"
+value = 0
+
+[State Limiter]
+type = mapset
+trigger1 = ctrl = 1
+map = "j.5H"
+value = 0
+
+[State Limiter]
+type = mapset
+trigger1 = ctrl = 1
+map = "j.6H"
+value = 0
+
+
 
 ;This controller plays a sound everytime KFM lands from a jump, or
 ;from his back-dash.

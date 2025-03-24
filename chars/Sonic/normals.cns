@@ -115,7 +115,7 @@ guardsound = 6,0
 ground.type = High
 ground.slidetime = 15
 ground.hittime  = 5
-ground.velocity = -5.5
+ground.velocity = -3
 air.velocity = -2.5,-4
 forcenofall = 1
 
@@ -190,12 +190,12 @@ ctrl = 1
 [State 230, 4]
 type = PosAdd
 trigger1 = AnimElem = 3
-x = 7
+x = 10
 
 [State 230, 5]
 type = PosAdd
 trigger1 = AnimElem = 4
-x = 4
+x = 20
 
 [State 0, ChangeState]
 type = ChangeState
@@ -317,7 +317,7 @@ hitsound   = 5,0
 guardsound = 6,0
 ground.type = Low
 ground.slidetime = 4
-ground.hittime  = 9
+ground.hittime  = 13
 ground.velocity = -4
 air.velocity = -1.5,-3
 
@@ -326,6 +326,13 @@ type = ChangeState
 trigger1 = AnimTime = 0
 value = 11
 ctrl = 1
+
+[State Limiter]
+type = mapset
+trigger1 = movecontact = 1
+map = "DL"
+value = 1
+ignorehitpause = 1
 
 ;---------------------------------------------------------------------------
 ;2B
@@ -353,7 +360,7 @@ value = 0, 0
 ;This is the first hit, triggered on the 3rd element of animation.
 [State 410, 2]
 type = HitDef
-trigger1 = AnimElem = 3
+trigger1 = AnimElem = 4
 attr = C, NA
 damage    = 37
 animtype  = Medium
@@ -367,13 +374,15 @@ guardsound = 6,0
 ground.type = Low
 ground.slidetime = 12
 ground.hittime  = 17
-ground.velocity = -4
+ground.velocity = -1
 air.velocity = -3,-4
+
+
 
 ;This is the second hit, triggered on the 4th element of animation.
 [State 410, 3]
 type = HitDef
-trigger1 = AnimElem = 4
+trigger1 = AnimElem = 5
 attr = C, NA
 damage    = 36
 animtype  = Medium
@@ -386,7 +395,7 @@ guardsound = 6,0
 ground.type = High
 ground.slidetime = 12
 ground.hittime  = 17
-ground.velocity = -7
+ground.velocity = -3
 air.velocity = -3,-4
 
 [State 410, 4]
@@ -395,6 +404,12 @@ trigger1 = AnimTime = 0
 value = 11
 ctrl = 1
 
+[State Limiter]
+type = mapset
+trigger1 = movecontact = 1
+map = "DM"
+value = 1
+ignorehitpause = 1
 ;---------------------------------------------------------------------------
 ;2C
 ; CNS difficulty: easy
@@ -444,6 +459,13 @@ ctrl = 1
 type = ChangeState
 trigger1 = movecontact && command = "holdup"
 value = 40
+
+[State Limiter]
+type = mapset
+trigger1 = movecontact = 1
+map = "DH"
+value = 1
+ignorehitpause = 1
 ;---------------------------------------------------------------------------
 ;2D
 ; CNS difficulty: easy
@@ -554,6 +576,14 @@ type = ChangeState
 trigger1 = AnimTime = 0
 value = 11
 ctrl = 1
+
+[State Limiter]
+type = mapset
+trigger1 = movecontact = 1
+map = "DFH"
+value = 1
+ignorehitpause = 1
+
 ;---------------------------------------------------------------------------
 ;j.5A
 ; CNS difficulty: easy
@@ -600,6 +630,13 @@ type = ChangeState
 triggerall=movehit
 trigger1 = movecontact = 1 && command = "holdup"
 value = 45
+
+[State Limiter]
+type = mapset
+trigger1 = movecontact = 1
+map = "j.5L"
+value = 1
+ignorehitpause = 1
 ;---------------------------------------------------------------------------
 ;j.5B
 ; CNS difficulty: easy
@@ -647,7 +684,12 @@ triggerall=movehit
 trigger1 = movecontact = 1 && command = "holdup"
 value = 45
 
-
+[State Limiter]
+type = mapset
+trigger1 = movecontact = 1
+map = "j.5M"
+value = 1
+ignorehitpause = 1
 ;---------------------------------------------------------------------------
 ;j.5C
 ; CNS difficulty: easy
@@ -696,6 +738,13 @@ type = ChangeState
 triggerall=movehit
 trigger1 = movecontact = 1 && command = "holdup"
 value = 45
+
+[State Limiter]
+type = mapset
+trigger1 = movecontact = 1
+map = "j.5H"
+value = 1
+ignorehitpause = 1
 ;---------------------------------------------------------------------------
 ;j.6C
 ; CNS difficulty: easy
@@ -746,6 +795,14 @@ trigger1 = (target(1502), stateno = 5000) || (target(1502), stateno = 5010) || (
 value = 1111300
 ID = 1502
 ignorehitpause = 1
+
+[State Limiter]
+type = mapset
+trigger1 = movecontact = 1
+map = "j.6H"
+value = 1
+ignorehitpause = 1
+
 
 
 

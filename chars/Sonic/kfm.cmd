@@ -412,6 +412,22 @@ type = ChangeState
 value = 1000
 triggerall = command = "QCF_x"
 trigger1 = var(1) ;Use combo condition (above)
+
+;---------------------------------------------------------------------------
+;Up Kicks
+[State -1, Up Kicks]
+type = ChangeState
+value = 1001
+triggerall = command = "QCF_y"
+trigger1 = var(1) ;Use combo condition (above)
+;---------------------------------------------------------------------------
+;Up Kicks
+[State -1, Up Kicks]
+type = ChangeState
+value = 1001
+triggerall = command = "QCF_y"
+trigger1 = var(1) ;Use combo condition (above)
+
 ;---------------------------------------------------------------------------
 ;Dive Kick
 [State -1, Dive Kick]
@@ -495,6 +511,9 @@ trigger1 = ctrl
 trigger2 = (stateno = 210) && movecontact
 trigger3 = (stateno = 230) && movecontact ; Heavy attack
 trigger4 = (stateno = 400) && movecontact
+trigger5 = (stateno = 410) && movecontact
+trigger6 = (stateno = 430) && movecontact
+trigger7 = (stateno = 450) && movecontact
 ;---------------------------------------------------------------------------
 ;5B
 [State -1, 5B]
@@ -503,11 +522,14 @@ value = 210 ; State for 5B Medium Attack
 triggerall = command = "y"
 triggerall = command != "holddown"
 triggerall = statetype != A
-triggerall = stateno != 52
+triggerall = stateno != 52 && !map(M)
 trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact ; Light attack
 trigger3 = (stateno = 230) && movecontact ; Heavy attack
-
+trigger4 = (stateno = 400) && movecontact
+trigger5 = (stateno = 410) && movecontact
+trigger6 = (stateno = 430) && movecontact
+trigger7 = (stateno = 450) && movecontact
 ;---------------------------------------------------------------------------
 ;5C
 [State -1, 5C]
@@ -516,12 +538,16 @@ value = 230 ; State for 5C Heavy Attack
 triggerall = command = "z"
 triggerall = command != "holddown"
 triggerall = statetype != A
-triggerall = stateno != 52
+triggerall = stateno != 52 && !map(H)
 trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact ; Light attack
 trigger3 = (stateno = 210) && movecontact ; Medium attack
 trigger4 = (stateno = 240) && movecontact
-
+trigger4 = (stateno = 400) && movecontact
+trigger5 = (stateno = 410) && movecontact
+trigger6 = (stateno = 430) && movecontact
+trigger7 = (stateno = 450) && movecontact
+trigger8 = (stateno = 40) && movecontact
 
 ;---------------------------------------------------------------------------
 ;5D
@@ -549,9 +575,14 @@ type = ChangeState
 value = 400
 triggerall = command = "x"
 triggerall = command = "holddown"
-triggerall = statetype != A
+triggerall = statetype != A && !map(DL)
 trigger1 = ctrl
-
+trigger2 = (stateno = 200) && movecontact
+trigger3 = (stateno = 210) && movecontact
+trigger4 = (stateno = 230) && movecontact
+trigger5 = (stateno = 410) && movecontact
+trigger6 = (stateno = 430) && movecontact
+trigger7 = (stateno = 450) && movecontact
 ;---------------------------------------------------------------------------
 ;2B
 [State -1, 2B]
@@ -559,10 +590,10 @@ type = ChangeState
 value = 410
 triggerall = command = "y"
 triggerall = command = "holddown"
-triggerall = statetype != A
+triggerall = statetype != A && !map(DM)
 trigger1 = ctrl
-trigger2 = (stateno = 400) || (stateno = 430)
-trigger2 = (time > 9) || (movecontact && time > 5)
+trigger2 = (stateno = 400) || (stateno = 200) || (stateno = 410)  || (stateno = 210) || (stateno = 230) || (stateno = 430) || (stateno = 450) && movecontact
+trigger3 = (time > 9) || (movecontact && time > 5)
 
 ;---------------------------------------------------------------------------
 ;2C
@@ -572,11 +603,18 @@ value = 430
 triggerall = command = "z"
 triggerall = command = "holddown"
 triggerall = command != "holdfwd"
-triggerall = statetype != A
+triggerall = statetype != A && !map(DH)
 trigger1 = ctrl
-trigger2 = (stateno = 400)
-trigger3 = (stateno = 1000) && movecontact
-trigger4 = (stateno = 40) && movecontact
+trigger2 = (stateno = 400) && movecontact
+trigger3 = (stateno = 410) && movecontact
+trigger4 = (stateno = 1000) && movecontact
+trigger5 = (stateno = 200) && movecontact
+trigger6 = (stateno = 210) && movecontact
+trigger7 = (stateno = 230) && movecontact
+trigger8 = (stateno = 400) && movecontact
+trigger9 = (stateno = 410) && movecontact
+trigger10 = (stateno = 40) && movecontact
+trigger11 = (stateno = 450) && movecontact
 ;---------------------------------------------------------------------------
 ;3C
 [State -1, 3C]
@@ -585,11 +623,14 @@ value = 450
 triggerall = command = "z"
 triggerall = command = "holddown"
 triggerall = command = "holdfwd"
-triggerall = statetype != A
+triggerall = statetype != A && !map(DFL)
 trigger1 = ctrl
 trigger2 = (stateno = 200) && movecontact
 trigger3 = (stateno = 210) && movecontact
 trigger4 = (stateno = 230) && movecontact
+trigger5 = (stateno = 400) && movecontact
+trigger6 = (stateno = 410) && movecontact
+trigger7 = (stateno = 430) && movecontact
 ;---------------------------------------------------------------------------
 ;2D
 [State -1, 2D]
@@ -608,7 +649,7 @@ trigger2 = (time > 9) || (movecontact && time > 5)
 type = ChangeState
 value = 600
 triggerall = command = "x"
-trigger1 = statetype = A
+trigger1 = statetype = A && !map(j.5L)
 trigger1 = ctrl
 trigger2 = stateno = 600
 trigger3 = stateno = 1350 ;Air blocking
@@ -621,7 +662,7 @@ trigger6 = (stateno = 630) && movecontact
 type = ChangeState
 value = 610
 triggerall = command = "y"
-trigger1 = statetype = A
+trigger1 = statetype = A &&  !map(j.5M)
 trigger1 = ctrl
 trigger2 = stateno = 1350 ;Air blocking
 trigger3 = (stateno = 600) && movecontact
@@ -634,7 +675,7 @@ type = ChangeState
 value = 635
 triggerall = command = "z"
 triggerall = command = "holdfwd"
-trigger1 = statetype = A
+trigger1 = statetype = A && !map(j.6H)
 trigger1 = ctrl
 trigger2 = stateno = 1350 ;Air blocking
 trigger3 = stateno = 600
@@ -646,7 +687,7 @@ trigger5 = (stateno = 630) && movecontact
 type = ChangeState
 value = 630
 triggerall = command = "z"
-trigger1 = statetype = A
+trigger1 = statetype = A && !map(j.5H)
 trigger1 = ctrl
 trigger2 = stateno = 1350 ;Air blocking
 trigger3 = stateno = 600
