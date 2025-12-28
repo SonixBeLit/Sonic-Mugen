@@ -436,8 +436,9 @@ Clsn2: 2
 101,0, 0,0, 5
 101,1, 0,0, 3
 101,2, 0,0, 3
-101,3, 0,0, 5
-101,4, 0,0, 5
+LoopStart
+101,3, 0,0, 4
+101,4, 0,0, 4
 
 ; 5D
 [Begin Action 240]
@@ -462,10 +463,45 @@ Clsn2: 1
 ; 5D-D
 [Begin Action 241]
 LoopStart
+Clsn2Default: 1
+  Clsn2[0] = -20, -35, 19, 0
 241,0, 0,0, 4
 241,1, 0,0, 4
 241,2, 0,0, 4
 241,3, 0,0, 4
+
+; GIMME UR FOREHEAD
+[Begin Action 244]
+Clsn2Default: 1
+  Clsn2[0] = -22, -39, 21, 1
+245,3, 0,0, 12
+Clsn2: 1
+  Clsn2[0] = -15, -37, 20, 0
+245,4, 0,0, 8
+Clsn2: 1
+  Clsn2[0] = -14, -33, 21, 0
+245,5, 0,0, 5
+Clsn2Default: 1
+  Clsn2[0] = -19, -30, 31, 2
+Clsn1: 1
+  Clsn1[0] = 17, -23, 33, -5
+245,6, 0,0, 4
+245,7, 0,  Clsn1[0] = 17, -23, 33, -5
+Clsn2Default: 1
+  Clsn2[0] = -16, -36, 21, 1
+245,8, 0,0, 4
+245,9, 0,0, 4
+245,10, 0,0, 4
+
+; GiMME UR FORHEAD! (hit)
+[Begin Action 245]
+LoopStart
+Clsn1Default: 1
+  Clsn1[0] = 17, -23, 33, -5
+Clsn2Default: 1
+  Clsn2[0] = -19, -30, 31, 2
+245,6, 0,0, 4
+245,7, 0,0, 4
 
 ; Crouching light punch
 [Begin Action 400]
@@ -847,7 +883,7 @@ Clsn2Default: 1
 1010,9, 0,0, 3
 
 ;-----------------------------------
-; Fast Kung Fu Palm
+; Rapid Kicks
 [Begin Action 1020]
 Clsn2: 2
  Clsn2[0] = -10,  0, 19,-80

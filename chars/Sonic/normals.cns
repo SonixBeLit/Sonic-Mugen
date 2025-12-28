@@ -227,6 +227,8 @@ trigger1 = command = "y" && time > 8
 trigger2=time>12
 value = 241
 ctrl = 1
+
+
 ;---------------------------------------------------------------------------
 ;Blue Streaks
 [Statedef 241]
@@ -250,10 +252,17 @@ type = VelSet
 trigger1 = time > 12
 x = 10
 
-[State 105, 3]
+[State 0, ChangeState]
 type = ChangeState
-trigger1 = time = 70
+trigger1 = command = "holdback" && time > 3
 value = 239
+ctrl = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = command = "z" && time > 3
+value = 244
+ctrl = 1
 
 ;Blue Streaks Stop
 [Statedef 239]
@@ -271,6 +280,54 @@ type = ChangeState
 trigger1 = animtime = 0
 value = 0
 ctrl = 1
+
+;---------------------------------------------------------------------------
+;Blue Streaks A
+[Statedef 242]
+type    = S
+movetype= A
+physics = S
+poweradd= 0
+ctrl = 0
+velset = 0,0
+anim = 242
+sprpriority = 2
+;--------------------------------------------------------------------------- 
+;Blue Streaks B
+[Statedef 243]
+
+;---------------------------------------------------------------------------
+;Blue Streaks C
+[Statedef 244]
+type    = S
+movetype= I
+physics = S
+poweradd= 0
+ctrl = 0
+velset = vel x*.8,0
+anim = 244
+sprpriority = 2
+
+[State 105, 3]
+type = ChangeState
+trigger1 = movecontact
+value = 245
+ctrl = 1
+
+[Statedef 245]
+type    = S
+movetype= I
+physics = S
+poweradd= 0
+ctrl = 0
+velset = vel x*.8,0
+anim = 245
+sprpriority = 2
+
+
+;Blue Streaks C Hit
+
+
 ;---------------------------------------------------------------------------
 ;2A
 ; CNS difficulty: easy
